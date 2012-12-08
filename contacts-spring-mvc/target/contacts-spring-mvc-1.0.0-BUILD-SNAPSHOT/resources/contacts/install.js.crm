@@ -1,1 +1,0 @@
-steal.File('crm.html').save(readUrl('https://raw.github.com/jupiterjs/contacts/master/crm.html'));
