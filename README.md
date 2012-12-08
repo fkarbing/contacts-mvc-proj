@@ -1,4 +1,3 @@
-
 ### Contacts: 
 
 	The project aims to combine javascriptMVC and SpringMVC 
