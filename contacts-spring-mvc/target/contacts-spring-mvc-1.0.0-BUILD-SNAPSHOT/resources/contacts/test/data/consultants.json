@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "name": "Fredrik Karbing",
+        "consultantskillId": "Java",
+        "companyId": "Sun Microsystem",
+        "locationId": "Solna"
+    },
+    {
+        "id": 1,
+        "name": "Kalle Banan",
+        "consultantskillId": ".Net",
+        "companyId": "Microsoft",
+        "locationId": "Hammarby"
+    }
+]

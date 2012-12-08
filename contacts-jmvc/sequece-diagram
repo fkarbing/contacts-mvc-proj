@@ -1,0 +1,28 @@
+# Parser Class: com.zanthan.sequence.parser.alternate.AlternateParserImpl
+$/document_body/.contacts()
+{
+	controller.setup()
+	{	
+		class.newInstance()
+		{
+			class.setup()
+			{
+				controller.init()
+				{
+					category_list_wrapper.mxui_data_list()
+					{
+						ul_list_wrapper.init() {}
+						ul_list_wrapper.update() {} 
+						ul_list_wrapper.draw() {
+							list_options_model.findAll(this.options.params, this.callback['list'])
+							{
+								fn.ajax(str || ) {}
+							}
+						} 
+
+					}
+				}
+			}
+		}
+	}
+}

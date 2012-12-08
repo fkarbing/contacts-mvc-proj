@@ -1,0 +1,24 @@
+<form id='consultantForm' class='x_formCreate' action="#" onsubmit="console.log('on submit..'); _on_submit(this); return false">
+	<input type='text' name='name' class="x_formItem" placeholder='Name' tabindex='1' required/><br/>
+	<input type='email' name='email' class="x_formItem" placeholder='Email' tabindex='2' required/><br/>
+    <select name='companyId' class="x_formItem">
+        <%Contacts.Models.Company.list.each(function(i, item){ %>
+        <option value='<%=item.id%>'><%=item.name%></option>
+        <%})%>
+    </select>
+    <select name='locationId' class="x_formItem">
+        <%Contacts.Models.Location.list.each(function(i, item){ %>
+        <option value='<%=item.id%>'><%=item.name%></option>
+        <%})%>
+    </select>
+    <select name='consultantskillId' class="x_formItem">
+        <%Contacts.Models.Consultantskill.list.each(function(i, item){ %>
+        <option value='<%=item.id%>'><%=item.name%></option>
+        <%})%>
+    </select>
+    <div class='x_formBtnSubmitWrapper'>
+       <input type='submit' class='x_formBtnSubmit' value='Send'/>
+    </div>
+
+    
+</form>

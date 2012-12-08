@@ -1,0 +1,7 @@
+<tr>
+    <td> <%=this.name %>, </td>
+    <td> <%=this.email %>, </td>
+    <td> <%= Contacts.Models.Company._findItemName(this.companyId) %> </td>
+    <td> <%= Contacts.Models.Location._findItemName(this.locationId) %> </td>
+    <td> <%= Contacts.Models.Consultantskill._findItemName(this.consultantskillId) %> </td>
+</tr>

@@ -1,0 +1,46 @@
+[
+	{
+        "id": 1,
+        "name": "Java developer"
+    },
+    {
+        "id": 2,
+        "name": "Scrum master"
+    },
+    {
+        "id": 3,
+        "name": "DB Admin"
+    },
+    {
+        "id": 4,
+        "name": "DevOps"
+    },
+    {
+        "id": 5,
+        "name": "Project manager"
+    },
+    {
+        "id": 6,
+        "name": "Tester"
+    },
+    {
+        "id": 7,
+        "name": "CTO"
+    },
+    {
+        "id": 8,
+        "name": "To be invented"
+    },
+    {
+        "id": 9,
+        "name": "To be invented"
+    },
+    {
+        "id": 10,
+        "name": "To be invented"
+    },
+    {
+        "id": 11,
+        "name": "To be invented"
+    }
+]

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jsUtils test</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="../js-utils.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function() {
+        console.log(">>> jsUtils test, document ready...");
+        
+        // @Test: repeted removal of elements by obj in an array.
+        $("body").append("<div>"+"@Test: repeted removal (each even elem) of elements by obj in an array."+"</div>");
+        
+        // Ints
+        var aData = [0,1,2,3,4,5,6];
+        $("body").append("<div>"+"start aData: "+aData+"</div>");
+        test_Array_removeElem(aData);
+        $("body").append("<div>"+"end aData: "+aData+"</div>");
+        
+        // Objs
+        var aObjData = new Array();
+        for(var i=0; i < 7; i++) {    // 7 Objs...
+            aObjData.push(new test_Obj(i));
+        }
+        $("body").append("<div>"+"start aObjData: "+aObjData+"</div>");
+        test_Array_removeElem(aObjData);
+        $("body").append("<div>"+"end aObjData: "+aObjData+"</div>");
+             
+        
+        // @Test: S.xHashCode - As java 7 String.hashCode.
+        $("body").append("<div>"+"@Test: S.xHashCode - As java 7 String.hashCode.");
+        
+        var testStrings = ['123', 'qwerty', '{dsfdsf: wfwef, sadfasdf: 1, fsa3 : ""&^%$wer"}','{dsfdsf: wfwef, sadfasdf: 1, fsa3 : ""&^%$wer"}, {dsfdsf: wfwef, sadfasdf: 1, fsa3 : ""&^%$wer"}'];
+        $("body").append("<div>"+"start xHashCode: "+testStrings+"</div>");
+        for(var i=0; i<testStrings.length; i++) {
+            $("body").append("<div>"+testStrings[i]+" = ["+testStrings[i].xHashCode()+"]</div>");    
+        }
+        
+        $("body").append("<div>"+"end xHashCode.</div>");
+        
+        console.log("<<< jsUtils test, document ready.");
+    });
+</script>
+
+<script type="text/javascript">
+
+    /* test_Obj - test Obj with unique value (uv) */
+    test_Obj = function(id) {
+        this.id = id;
+        this.uv = Math.random();    // unique value.
+    }
+    
+    /* test_Array_removeElem - test Helper Fn */
+    function test_Array_removeElem(aData) {
+        console.log("test_Array_removeElem(aData), aData: "+aData);
+        for(var i=0; i<aData.length; i++) {
+            
+            if(i%2===0) {
+                aData.removeElem(aData, aData[i]);
+                console.log("After aData.removeElem(aData, aData[i]), i: "+i+" aData: "+aData);
+            }
+        }
+    }
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

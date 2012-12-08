@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="1" time="2.309" errors="1" skipped="0" tests="7" name="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="23.3-b01"/>
+    <property name="user.country.format" value="SE"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/fredrik/02_programming/12b_spring_projects/contacts-mvc-proj/contacts-spring-mvc"/>
+    <property name="java.runtime.version" value="1.7.0_07-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/c2/5_g54hdn6vv7v4dpd1k13w400000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/fredrik/02_programming/12a_workspace-sts-3.1.0.RELEASE/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf6860800216416117427.tmp"/>
+    <property name="sun.jnu.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/fredrik/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.8.2"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/fredrik"/>
+    <property name="user.timezone" value="Europe/Stockholm"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="fredrik"/>
+    <property name="java.class.path" value="/Users/fredrik/02_programming/12_springsource/sts-3.1.0.RELEASE/configuration/org.eclipse.osgi/bundles/572/1/.cp/jars/plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_07"/>
+    <property name="java.ext.dirs" value="/Users/fredrik/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/fredrik/02_programming/12b_spring_projects/contacts-mvc-proj/contacts-spring-mvc/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.699" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testFetch"/>
+  <testcase time="0.439" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testFetchAll"/>
+  <testcase time="0.191" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testRemove">
+    <failure message="Content type not set" type="java.lang.AssertionError">java.lang.AssertionError: Content type not set
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:36)
+	at org.springframework.test.util.AssertionErrors.assertTrue(AssertionErrors.java:60)
+	at org.springframework.test.web.servlet.result.ContentResultMatchers$1.match(ContentResultMatchers.java:71)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:141)
+	at se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest.testRemove(CompanyControllerMockMvcStandaloneTest.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@793ba896: startup date [Thu Dec 06 15:09:40 CET 2012]; root of context hierarchy
+INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 &apos;javax.inject.Inject&apos; annotation found and supported for autowiring
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2b20dda: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,appContextWebConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,companyController,locationController,consultantSkillController,consultantController,myModelController,consultantSkillRepository,companyRepository,locationRepository,consultantRepository,myModelRepository,riakPbcClient,idManager,riakIdManager]; root of factory hierarchy
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: riakPbcClient...
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: riakIdManager...
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: idManager...
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[DELETE],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public se.fkarbing.spring.mvc.common.model.Company se.fkarbing.spring.mvc.web.controller.CompanyController.remove(java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[DELETE],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public boolean se.fkarbing.spring.mvc.web.controller.CompanyController.removeAll()
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[POST],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.create(se.fkarbing.spring.mvc.common.model.Company,javax.servlet.http.HttpServletRequest)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[PUT],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.update(se.fkarbing.spring.mvc.common.model.Company,java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public se.fkarbing.spring.mvc.common.model.Company se.fkarbing.spring.mvc.web.controller.CompanyController.fetch(java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public java.util.List&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.fetchAll()
+INFO : org.springframework.mock.web.MockServletContext - Initializing Spring FrameworkServlet &apos;&apos;
+INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization started
+INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization completed in 1 ms
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - company json: {&quot;id&quot;:null,&quot;name&quot;:&quot;mock model: 500&quot;,&quot;address&quot;:&quot;V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM&quot;,&quot;latlng&quot;:&quot;59.33230529999999, 18.05283570&quot;}
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - &gt;&gt;&gt; create()... model: se.fkarbing.spring.mvc.common.model.Company@269848a0[key=&lt;null&gt;,name=mock model: 500,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=&lt;null&gt;]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - req url: http://localhost:80/companys
+&gt;&gt;&gt; RiakModelIdManager...
+DEBUG: se.fkarbing.spring.mvc.core.repository.RiakModelIdManager - Model ID injected: se.fkarbing.spring.mvc.common.model.Company@269848a0[key=4c868f9b-c07f-43c9-8bf6-5cd06641999c,name=mock model: 500,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=4c868f9b-c07f-43c9-8bf6-5cd06641999c]
+INFO : se.fkarbing.riak.client.RiakRepository - storedModel: se.fkarbing.spring.mvc.common.model.Company@5a172610[key=4c868f9b-c07f-43c9-8bf6-5cd06641999c,name=mock model: 500,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=4c868f9b-c07f-43c9-8bf6-5cd06641999c]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - &lt;&lt;&lt; create(), id: 4c868f9b-c07f-43c9-8bf6-5cd06641999c
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - storedItem: se.fkarbing.spring.mvc.common.model.Company@25c412a5[key=&lt;null&gt;,name=mock model: 500,address=V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=4c868f9b-c07f-43c9-8bf6-5cd06641999c]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - stored item: se.fkarbing.spring.mvc.common.model.Company@25c412a5[key=&lt;null&gt;,name=mock model: 500,address=V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=4c868f9b-c07f-43c9-8bf6-5cd06641999c]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - fetch with resourcePathWithId: /companys/4c868f9b-c07f-43c9-8bf6-5cd06641999c
+DEBUG: se.fkarbing.spring.mvc.web.controller.CompanyController - &gt;&gt;&gt; remove()... 
+INFO : se.fkarbing.riak.client.RiakRepository - removed, id: 4c868f9b-c07f-43c9-8bf6-5cd06641999c
+DEBUG: se.fkarbing.spring.mvc.web.controller.CompanyController - &lt;&lt;&lt; remove(), id: N/A
+INFO : org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@793ba896: startup date [Thu Dec 06 15:09:40 CET 2012]; root of context hierarchy
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2b20dda: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,appContextWebConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,companyController,locationController,consultantSkillController,consultantController,myModelController,consultantSkillRepository,companyRepository,locationRepository,consultantRepository,myModelRepository,riakPbcClient,idManager,riakIdManager]; root of factory hierarchy
+</system-out>
+  </testcase>
+  <testcase time="0.628" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testRemoveAll"/>
+  <testcase time="0.115" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testCreate"/>
+  <testcase time="0.101" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testCreateInvalidModel"/>
+  <testcase time="0.132" classname="se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest" name="testUpdate">
+    <error message="Request processing failed; nested exception is com.basho.riak.client.convert.NoKeySpecifedException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is com.basho.riak.client.convert.NoKeySpecifedException
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:929)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:835)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:730)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:798)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:168)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:136)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:134)
+	at se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest.testUpdate(CompanyControllerMockMvcStandaloneTest.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: com.basho.riak.client.convert.NoKeySpecifedException
+	at com.basho.riak.client.bucket.DefaultBucket.store(DefaultBucket.java:455)
+	at se.fkarbing.riak.client.RiakRepository.store(RiakRepository.java:109)
+	at se.fkarbing.spring.mvc.core.controller.XSimpleMvcController.handleUpdate(XSimpleMvcController.java:38)
+	at se.fkarbing.spring.mvc.web.controller.CompanyController.update(CompanyController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:917)
+	... 44 more
+</error>
+    <system-out>INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@7bd67191: startup date [Thu Dec 06 15:09:41 CET 2012]; root of context hierarchy
+INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 &apos;javax.inject.Inject&apos; annotation found and supported for autowiring
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3a1bd53f: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,appContextWebConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,companyController,locationController,consultantSkillController,consultantController,myModelController,consultantSkillRepository,companyRepository,locationRepository,consultantRepository,myModelRepository,riakPbcClient,idManager,riakIdManager]; root of factory hierarchy
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: riakPbcClient...
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: riakIdManager...
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.riak.client.RiakRepository - &lt;&lt;&lt; RiakRepository()
+INFO : se.fkarbing.spring.mvc.web.AppContextWebConfig$$EnhancerByCGLIB$$5cefaf7e - ### AppContextCommonConfig: idManager...
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[DELETE],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public se.fkarbing.spring.mvc.common.model.Company se.fkarbing.spring.mvc.web.controller.CompanyController.remove(java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[DELETE],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public boolean se.fkarbing.spring.mvc.web.controller.CompanyController.removeAll()
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[POST],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.create(se.fkarbing.spring.mvc.common.model.Company,javax.servlet.http.HttpServletRequest)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[PUT],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.update(se.fkarbing.spring.mvc.common.model.Company,java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public se.fkarbing.spring.mvc.common.model.Company se.fkarbing.spring.mvc.web.controller.CompanyController.fetch(java.lang.String)
+INFO : org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped &quot;{[/companys],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}&quot; onto public java.util.List&lt;se.fkarbing.spring.mvc.common.model.Company&gt; se.fkarbing.spring.mvc.web.controller.CompanyController.fetchAll()
+INFO : org.springframework.mock.web.MockServletContext - Initializing Spring FrameworkServlet &apos;&apos;
+INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization started
+INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization completed in 0 ms
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - company json: {&quot;id&quot;:null,&quot;name&quot;:&quot;mock model: 7&quot;,&quot;address&quot;:&quot;V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM&quot;,&quot;latlng&quot;:&quot;59.33230529999999, 18.05283570&quot;}
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - &gt;&gt;&gt; create()... model: se.fkarbing.spring.mvc.common.model.Company@3dd1a577[key=&lt;null&gt;,name=mock model: 7,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=&lt;null&gt;]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - req url: http://localhost:80/companys
+&gt;&gt;&gt; RiakModelIdManager...
+DEBUG: se.fkarbing.spring.mvc.core.repository.RiakModelIdManager - Model ID injected: se.fkarbing.spring.mvc.common.model.Company@3dd1a577[key=774c6ffc-60b1-4230-8632-8c0132e36bbc,name=mock model: 7,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=774c6ffc-60b1-4230-8632-8c0132e36bbc]
+INFO : se.fkarbing.riak.client.RiakRepository - storedModel: se.fkarbing.spring.mvc.common.model.Company@404aada5[key=774c6ffc-60b1-4230-8632-8c0132e36bbc,name=mock model: 7,address=V?stra J?rnv?gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=774c6ffc-60b1-4230-8632-8c0132e36bbc]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - &lt;&lt;&lt; create(), id: 774c6ffc-60b1-4230-8632-8c0132e36bbc
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - storedItem: se.fkarbing.spring.mvc.common.model.Company@66ce4c9c[key=&lt;null&gt;,name=mock model: 7,address=V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=774c6ffc-60b1-4230-8632-8c0132e36bbc]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - stored item: se.fkarbing.spring.mvc.common.model.Company@66ce4c9c[key=&lt;null&gt;,name=mock model: 7,address=V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=774c6ffc-60b1-4230-8632-8c0132e36bbc]
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyControllerMockMvcStandaloneTest - company putJsonStr: {&quot;id&quot;:&quot;774c6ffc-60b1-4230-8632-8c0132e36bbc&quot;,&quot;name&quot;:&quot;a new name&quot;,&quot;address&quot;:&quot;V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM&quot;,&quot;latlng&quot;:&quot;59.33230529999999, 18.05283570&quot;} resourcePathWithId: /companys/774c6ffc-60b1-4230-8632-8c0132e36bbc
+INFO : se.fkarbing.spring.mvc.web.controller.CompanyController - &gt;&gt;&gt; update()... model: se.fkarbing.spring.mvc.common.model.Company@7207ca7e[key=&lt;null&gt;,name=a new name,address=V??stra J??rnv??gsgatan 21 111 64 STOCKHOLM,latlng=59.33230529999999, 18.05283570,id=774c6ffc-60b1-4230-8632-8c0132e36bbc]
+INFO : org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@7bd67191: startup date [Thu Dec 06 15:09:41 CET 2012]; root of context hierarchy
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3a1bd53f: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,appContextWebConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,companyController,locationController,consultantSkillController,consultantController,myModelController,consultantSkillRepository,companyRepository,locationRepository,consultantRepository,myModelRepository,riakPbcClient,idManager,riakIdManager]; root of factory hierarchy
+</system-out>
+  </testcase>
+</testsuite>

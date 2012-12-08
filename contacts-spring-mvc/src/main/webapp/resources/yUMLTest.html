@@ -1,0 +1,465 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    
+    <!--
+        http://developer.yahoo.com/yui/articles/hosting/?base&button&fonts&grids&menu&reset&MIN&nocombine 
+    -->
+    
+    
+    
+    <!-- Individual YUI CSS files --> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/base/base-min.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/menu/assets/skins/sam/menu.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/button/assets/skins/sam/button.css"> 
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css" type="text/css" rel="Stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/jquery/jquery.sparklines.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- jQuery GOOGLE -->
+    
+    
+
+    
+    
+    <!-- Custom CSS -->
+    
+     <link rel="stylesheet" href="http://yuml.me/stylesheets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8"> 
+    
+    <title>Create UML diagrams online in seconds, no special tools needed.</title>
+</head>
+    <body>
+        
+        <div style="position: absolute; top: 10px; left: 10px; text-align: left;">
+          <a href="http://pocketworks.co.uk"><img src="http://yuml.me/images/pocketworks_logo.png" alt="pocketworks"/></a><br/>
+        <div style="font-size: 12px; padding-left: 25px; color: white;">Made by <a href="http://pocketworks.co.uk" style="color: white; text-decoration: none;">pocketworks mobile</a><br/>     
+        Enterprise mobile and web solutions
+        </div>
+        </div>
+        
+        
+        <div style="position: absolute; top: 20px; right: -12px;"><a href="http://yuml.me/diagram/scruffy/class/draw">
+            <img src="http://yuml.me/images/scruffbags_click_here.png" alt="Get That Napkin Style UML Scruffy Look" style="border: none;" /></a></div>
+        
+        
+        <div id="header">                       
+            
+                    <h1><a href="http://yuml.me/"><img src="http://yuml.me/images/yUML_small.png" alt="yUML - Generate UML diagrams online" style="border: none; height: 52px; width: 105px; "/></a></h1>   
+                        
+             
+            <p class="menu">                                
+                <a href="http://yuml.me/">Home</a>&nbsp;.&nbsp;               
+                <a href="http://yuml.me/getit">Buy</a>&nbsp;.&nbsp; 
+                <a href="http://yuml.me/faq">FAQ</a>&nbsp;.&nbsp;
+                <a href="http://yuml.me/wildthing">Tools</a>&nbsp;.&nbsp;
+                <a href="http://groups.google.com/group/yuml">Forum</a>&nbsp;.&nbsp;
+                <a href="https://twitter.com/yuml_app">Twitter</a>&nbsp;.&nbsp; 
+                <a href="http://www.tobinharris.com/past/tags/yuml" >Blog</a>&nbsp;.&nbsp;
+          </p>                                                                          
+        
+        
+        </div>  
+
+        
+            <br/>
+            <p>
+            <a href="http://yuml.me/diagram/nofunky/class/draw" class="button-link">Draw Class Diagram</a>
+            <a href="http://yuml.me/diagram/nofunky/activity/draw" class="button-link">Draw Activity Diagram</a> 
+            <a href="http://yuml.me/diagram/nofunky/usecase/draw" class="button-link">Draw Use Case Diagram</a>
+            </p>    
+            <a href="http://yuml.me/diagram/nofunky/class/samples">Class Samples</a> | <a href="http://yuml.me/diagram/nofunky/activity/samples">Activity Samples</a>  | <a href="http://yuml.me/diagram/nofunky/usecase/samples">Use Case Samples</a>    
+             
+        
+        <div id="content">          
+        <script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+    
+    $(".rss-popup span").click(function() {
+        $(this).next("div").stop(true, true).animate({opacity: "show", top: "-1em"}, "fast");
+        }/*, function() {
+        $(this).next("div").animate({opacity: "hide", top: "20"}, "fast");
+    }*/);
+    
+     $(".rss-popup-div").hover(null,function(){$(".rss-popup-div").animate({opacity: "hide", top: "-2em"}, "fast")});
+     
+    $('#dsl_text').attr('value',dsl);
+    
+    var pressed = {};
+    $("#dsl_text").keydown(function (e) {       
+        pressed[event.keyCode] = true;
+         // Check if 'E' was pressed
+        if (69 == event.keyCode) {
+        // Check if Ctrl + S (Windows) or Command + S (Mac) was pressed
+            if (pressed[17] || pressed[224]) {              
+                buildUrl();             
+                event.preventDefault();
+            }
+        }
+    });
+    
+    $("#dsl_text").keyup(function(e){delete pressed[e.keyCode];});
+        
+    $('#usecaseImg').load(function(){$('#ajax-loader').hide(); if( ! $.browser.msie ){ $('#usecaseImg').css({opacity: 1}); } });
+
+});
+
+var justLoaded = true;
+var type = 'class';
+var customizations = new Array();
+var theme = 'plain';
+var dsl = '';
+var extension = '.png';   
+
+var host_name = 'http://yuml.me/'  
+
+if(extension == '.png'){extension == '';}
+
+var labels = new Array();
+labels['usecase'] = 'Use Case Diagram';
+labels['class'] = 'Class Diagram';
+labels['activity'] = 'Activity Diagram';
+labels['mindmap'] = 'MindMap Diagram';
+
+var examples = new Array()
+
+examples['activity'] = "(start)->|a|,|a|->(Make Coffee)->|b|,|a|->(Make Breakfast)->|b|,|b|-><c>[want more coffee]->(Make Coffee),<c>[satisfied]->(end)";
+examples['class'] = '// Cool Class Diagram\n[Customer]<>-orders*>[Order]\n[Order]++-0..*>[LineItem]\n[Order]-[note:Aggregate root.]';
+examples['usecase'] = '// Cool Use Case Diagram\n[Customer]-(Make Cup of Tea)\n(Make Cup of Tea)<(Add Milk)\n(Make Cup of Tea)>(Add Tea Bag)';
+examples['mindmap'] = '(yUML)-(Drawing)/(Sketching)/(Fun)';
+
+
+function buildUrl(){
+    
+    if(dsl == '' || justLoaded == false){
+         dsl = $('#dsl_text').attr('value');
+    }
+    
+    dsl = cleanDsl(dsl)
+    
+    var method = dsl.length > 200 ? 'POST' : 'GET';
+    
+    var template = method == 'GET' ? "http://yuml.me/diagram/[THEME];[CUSTOMISATIONS]/[TYPE]/short_url/[DSL][EXTENSION]" : "/diagram/[THEME];[CUSTOMISATIONS]/[TYPE]/";       
+    var output = template.replace('[THEME]',theme);
+    output = output.replace('[CUSTOMISATIONS]',getCustomizations());
+    output = output.replace('[TYPE]',type);
+    output = output.replace('[DSL]',dsl);
+    short_url_link = output.replace('[EXTENSION]',extension);
+    output_without_extension = output.replace('/short_url/','/').replace('[EXTENSION]','')
+    edit_link = output.replace('/short_url/','/edit/').replace('[EXTENSION]','')
+    output = output.replace('[EXTENSION]',extension);
+    output = output.replace('/short_url/','/');
+    
+    
+    output = output.replace('[EXTENSION]',extension);
+
+    if($('#usecaseImg').attr('src') != encodeURICustom(output))
+    {
+        $('#ajax-loader').show();
+        if(method=='GET'){
+            $('#usecaseImg').attr('src',encodeURICustom(output));
+        }
+        else{
+            var src = $.ajax({
+              type: "POST",
+              url: output,
+              data:{dsl_text: dsl},
+              async: false
+            }).responseText;
+            
+            $('#usecaseImg').attr('src',src);           
+            output_without_extension = src.replace(/^\/|\.pdf|\.png|.\jpeg/g,'');   
+                        
+        }
+        
+        if( ! $.browser.msie ){ $('#usecaseImg').css({opacity: 0.5}); }     
+        
+        $('.png_link').text(host_name + output_without_extension);
+        $('.png_link').attr("href", "http://yuml.me" + output_without_extension);
+        
+        $('#png_link').val(trim(host_name) + output_without_extension);
+        $('#pdf_link').val(trim(host_name) + output_without_extension + '.pdf');
+        $('#jpg_link').val(trim(host_name) + output_without_extension + '.jpg');
+        $('#json_link').val(trim(host_name) + output_without_extension + '.json');
+        $('#svg_link').val(trim(host_name) + output_without_extension + '.svg');
+        $('#edit_link').val(trim(host_name) + edit_link);
+        console.log(encodeURI(short_url_link))
+        $.get(encodeURI(short_url_link),function(data){
+            
+            //override GET data (which is garbage because there is no short_url_link for POST, we'd need to make it compatible)
+            if(method=='POST'){
+                data = output_without_extension;
+            }
+            
+            $('.png_short_link').text(host_name + data );
+            $('.png_short_link').attr("href",host_name + data );
+        
+            $('.pdf_short_link').text(host_name + data + '.pdf');
+            $('.pdf_short_link').attr("href",host_name + data + '.pdf');
+        
+            $('.jpg_short_link').text(host_name + data + '.jpg');
+            $('.jpg_short_link').attr("href",host_name + data + '.jpg');    
+
+            $('.json_short_link').text(host_name + data + '.json'  );
+            $('.json_short_link').attr("href", host_name + data + '.json'  );
+
+            $('.svg_short_link').text(host_name + data + '.svg'  );
+            $('.svg_short_link').attr("href", host_name + data + '.svg'  );
+        
+            $('.edit_short_link').text(host_name + "edit/" + data  );
+            $('.edit_short_link').attr("href", host_name + "edit/" + data  );
+
+
+        
+            $('.twitter_link').text("Tweet this diagram.");
+            $('.twitter_link').attr("href","http://twitter.com/home?status=Check out my @yuml_app diagram http://yuml.me/edit/" + data);
+            
+        })
+    }
+    
+    
+    
+    
+    return false
+}
+
+function trim(str){
+  return str.substring(0, str.length - 1);
+}
+
+function encodeURICustom(dsl){
+    tmp = encodeURI(dsl);
+    tmp = tmp.replace(/#/g,'%23')      
+    return tmp;
+}
+
+function cleanDsl(dsl)
+{
+    tmp = dsl
+    tmp = dsl.replace(/(\n|\r|\t)+$/, '');      
+    tmp = tmp.replace(/\n/g,', ').replace(/,,/g,',').replace(/, $/,'')          
+    return tmp;
+}    
+
+function prettyDsl(dsl){
+    tmp = dsl
+    tmp = dsl.replace(/\,\s+/g, '\n');      
+    tmp = tmp.replace(/,,/g,',').replace(/, $/,'')          
+    return tmp;
+}
+    
+function customize(property, val){
+    $('.rss-popup-div').hide();
+    customizations[property] = val;
+    if(val == null){delete(customizations[property])}
+    buildUrl();
+}
+
+function getCustomizations()
+{
+    var str = "";
+    if(customizations['dir']){str += "dir:" + customizations['dir'] + ";";}
+    if(customizations['scale']){str += "scale:" + customizations['scale'] + ";";}
+    return str;
+}
+
+
+function changeDiagramType(title, typeName, themeName, fileType, fileLabel, dslText){
+    type = typeName || type;
+    theme = themeName || theme;
+    dsl = dslText || dsl;
+
+    $('.rss-popup-div').hide();
+    if(fileType){extension = fileType; $('#extension-label').html(fileLabel)}
+    if(typeName){$('#diagram-label').html(labels[typeName]);}
+    if(theme){$('#theme-label').html(theme.replace(/nofunky/,'boring'));}   
+    if(typeName)$('#dsl_text').val(prettyDsl(dsl));
+    
+    buildUrl();
+}
+
+$(document).ready(function(){                       
+    if(dsl==''){dsl = examples[type]}
+    changeDiagramType(type,type,theme,'',extension)
+    buildUrl();             
+    justLoaded = false;
+});
+</script>
+
+
+
+
+<div class="big-text">Draw 
+    <div class="rss-popup"><span id="diagram-label" class="draw-options">Class</span>
+        <div class="rss-popup-div">
+                <span class="rss-popup-close" onclick="$('.rss-popup-div').hide()">X</span>
+                <ul>
+                <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType('Class Diagram','class',null,null,null,examples['class'])"><img src="http://yuml.me/diagram/scruffy;scale:70/class/[Class  Diagram]<>->[Ooh!]" /></li>
+                <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType('Use Case Diagram','usecase',null,null,null,examples['usecase'])"><img src="http://yuml.me/diagram/scruffy;scale:70/usecase/[You]-(Use Case Diagram)" /></li>
+                <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType('Activity Diagram','activity',null,null,null,examples['activity'])"><img src="http://yuml.me/diagram/scruffy;scale:70/activity/(start)->(Activity)->(end)" /></li>
+                </ul>
+        </div>      
+    </div>
+    <div style="height: .5em;"></div>
+    <span style="font-size: .7em; padding: .3em; display: inline-table;">Make it a
+    <div class="rss-popup" ><span id="theme-label" class="draw-options">scruffy</span> 
+        <div class="rss-popup-div">
+            <span class="rss-popup-close" onclick="$('.rss-popup-div').hide()">X</span>
+            <ul>
+            <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType(null,null,'nofunky')"><img src="http://yuml.me/images/draw_boring.png" /></li>
+            <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType(null,null,'plain' )"><img src="http://yuml.me/images/draw_plain.png" /></li>
+            <li style="list-style:none;cursor:pointer;" onclick="changeDiagramType(null,null,'scruffy' )"><img src="http://yuml.me/images/draw_scruffy.png" /></li>
+            </ul>
+        </div>
+    </div> one!
+    
+    </div>
+    
+    <p><div class="rss-popup" >Tweak 
+
+        <span id="tweak-label" class="draw-options">size</span>
+        <div class="rss-popup-div">
+                <span class="rss-popup-close" onclick="$('.rss-popup-div').hide()">X</span>
+                <ul>
+                <li style="list-style:none;cursor:pointer;" onclick="customize('scale','180' )"><img src="http://yuml.me/diagram/scale:180/class/[note:Huge!]" alt="Huge" /></li>         
+                <li style="list-style:none;cursor:pointer;" onclick="customize('scale','120' )"><img src="http://yuml.me/diagram/scale:140/class/[note:Big]" alt="Big" /></li>
+                <li style="list-style:none;cursor:pointer;" onclick="customize('scale', null)"><img src="http://yuml.me/diagram/class/[note:Normal]" alt="Normal" /></li>
+                <li style="list-style:none;cursor:pointer;" onclick="customize('scale','80')"><img src="http://yuml.me/diagram/scale:80/class/[note:Small]" alt="Small" /></li>
+                <li style="list-style:none;cursor:pointer;" onclick="customize('scale','60')"><img src="http://yuml.me/diagram/scale:60/class/[note:Tiny]" alt="Smaller" /></li>          
+                </ul>
+        </div>      
+        and
+        <span id="tweak-label" class="draw-options">direction</span>
+            <div class="rss-popup-div">
+                    <span class="rss-popup-close" onclick="$('.rss-popup-div').hide()">X</span>
+                    <ul style="width: 200px">
+                    <li style="list-style:none;cursor:pointer; padding-bottom: 1em;" onclick="customize('dir','LR')">Left to Right</li>
+                    <li style="list-style:none;cursor:pointer; padding-bottom: 1em;" onclick="customize('dir','TB')">Top Down</li>
+                    <li style="list-style:none;cursor:pointer; padding-bottom: 1em;" onclick="customize('dir','RL')">Right to Left</li>
+                    </ul>
+            </div>      
+        </div>
+
+        <div class="rss-popup" ><span class='draw-options' id="extension-label"></span>
+            <div class="rss-popup-div">
+                <span class="rss-popup-close" onclick="$('.rss-popup-div').hide()">X</span>
+                <ul>
+                <li style="list-style:none;cursor:pointer;padding:.2em;" onclick="changeDiagramType(null,null,null,'.png','.png image')">PNG image</li>
+                <li style="list-style:none;cursor:pointer;padding:.2em;" onclick="changeDiagramType(null,null,null,'.jpg','.jpeg image' )">JPEG image</li>
+                <li style="list-style:none;cursor:pointer;padding:.2em;" onclick="changeDiagramType(null,null,null,'.pdf', 'PDF file' )">PDF file</li>
+                </ul>
+            </div>
+            </div>
+    </p>
+
+<form action="/diagram/class/" method="post">
+<textarea id='dsl_text' style="padding: 1em; line-height: 1.8em; font-size: 1.1em; font-family: Courier;" rows="8" cols="70" name="dsl_text">
+[Customer]<>-orders*>[Order]
+[Order]++-1..*>[LineItem]
+</textarea>
+<p><input type="button" style="font-size: 1.4em;" value="Draw Diagram (ctrl-e)" onclick="buildUrl(); return false;" /></p>
+</form>
+
+<p style="padding-top: 2em; position: relative;"><img id="ajax-loader" src="http://yuml.me/images/ajax-loader.gif" style="display: none; position: absolute; top: 50%; left: 50%;"/><img id="usecaseImg" src="http://yuml.me/diagram/nofunky/class/[Customer]+1-%3E*[Order],%20[Order]++1-items%20%3E*[LineItem],%20[Order]-0..1%3E[PaymentMethod]"/>
+</p>
+<p class="med-text"><a class="png_short_link" href=""></a></p>  
+<p class=""><img src="http://yuml.me/images/twitter.png" alt="Tweet this" /><a class="twitter_link" href=""></a> <br/><a href="http://yuml.me/getit">Run yUML on your own servers</a></p>
+
+
+<table style="border: none; width: 100%;">
+  
+    <tr>
+        <td></td>                                                                     
+        <td style="background: #DDD; width: 400px;">Editable Url<br/><small>Best for wikis and blog posts</small></td>
+        <td style="background: #DDD; width: 200px;">Short Url<br/><small>For twitter etc</small></td>       
+    </tr>
+    
+    <tr>
+        <td style="background: #DDD">Edit Later<br/><small>To come back and edit the image later.</small></td>      
+        <td><input id="edit_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" type="text" onclick="this.select()"  /></td> 
+        <td><a class="edit_short_link" href=""></a></td> 
+    </tr>
+    
+    <tr>
+        <td style="background: #DDD">PNG Image<br/><small>For blogs, wikis or email. Transparent background.</small></td>       
+        <td><input id="png_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" onclick="this.select()" type="text" /></td>  
+            <td><a class="png_short_link" href=""></a></td>
+    </tr>
+    <tr>
+        <td style="background: #DDD">PDF Document<br/><small>Great for printing. Infinite zoom.</small></td>        
+        <td><input id="pdf_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" type="text" onclick="this.select()"  /></td>
+        <td><a class="pdf_short_link" href=""></a></td> 
+    </tr>
+    <tr>
+        <td style="background: #DDD">JPEG Image<br/><small>Solid background. Plays nicer with some desktop tools.</small></td>      
+        <td><input id="jpg_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" type="text" onclick="this.select()"  /></td>
+        <td><a class="jpg_short_link" href=""></a></td> 
+    </tr>
+    
+    <tr>
+        <td style="background: #DDD">JSON File<br/><small>To programatically save metadata.</small></td>        
+        <td><input id="json_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" type="text" onclick="this.select()"  /></td>
+        <td><a class="json_short_link" href=""></a></td>    
+    </tr>
+    
+    <tr>
+        <td style="background: #DDD">SVG Vector Graphics<br/><small>Experimental!</small></td>      
+        <td><input id="svg_link" style="background-color: #EEE; border: 0px solid white;width: 100%; padding: .2em; font-size: .85em;" type="text" onclick="this.select()"  /></td>
+        <td><a class="svg_short_link" href=""></a></td> 
+    </tr>
+</table>
+<p style="color: red;"><b>This page is experimental. Tweet me your <a href="http://twitter.com/tobinharris">feedback</a>. Does it work on IE!!!???</b></p>
+
+
+
+<p style="">
+<br/><a href="http://pocketworks.co.uk"><img src="http://yuml.me/images/pocketworks_logo.png" alt="Built by PocketWorks"></a>
+</p>
+                       
+
+<div id="adverts">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0134013767455458";
+/* yUML */
+google_ad_slot = "5172734957";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+        </div>
+        
+        <div id="footer" style="position: relative;">
+            
+            <div style="position: absolute; float: left; top: -60px; left: 12px;">
+                <a href="http://yuml.me/getit" style="text-decoration: none;"><img src="http://yuml.me/images/install.png" alt="yUML for your Business" style="border: none;" /><br/>Business Licenses</a>
+            </div>
+            
+            <p><a href="http://yuml.me/">Home</a> <a href="http://yuml.me/faq">FAQ</a> <a href="http://yuml.me/wildthing">In The Wild</a> <a href="http://yuml.me/getit">Buy</a> <a href="https://twitter.com/yuml_app">Twitter</a> <a href="http://yuml.me/sponsor">Advertise</a></p>
+            <span style="font-weight: bold; font-family: arial">yUML beta</span>  v0.18 <br/>a <b><a href="http://pocketworks.co.uk">pocketworks application</a></b><br/> by <a href="http://www.tobinharris.com">tobin harris</a>
+            <br/><br/>Tweet me your <a href="http://twitter.com/tobinharris">feedback</a> <br/>or <a href="mailto:tobin@pocketworks.co.uk">send us an email</a>.
+            
+        </div>
+        <!-- Google Analytics-->    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4340115-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    </body>
+</html>

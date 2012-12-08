@@ -1,0 +1,34 @@
+
+### contacts-spring-mvc: tech-spec
+
+## Implemented features:
+
+    # Annotations: 
+    
+        - ALL classes (? extends Component) are annotated and thereby managed by the Spring IoC container. 
+         
+    
+    # Testing: spring-test: 3.2.0 --> MockMvc
+    
+        - Enables requests against the Dispatcher servlet
+            and thereby "true" simulation of Http Requests/Responses.
+            
+    # Generic definitions of Controller / Repository to minimize code.
+    
+        ! NO services exists since the task "prohibited" business logic. 
+     
+    # Static content:
+    
+        - References all static content to be available in "compile time"
+        
+        - Copies all static content to ${basedir}/target/"name of war"/resources
+        
+    # Modular:
+    
+        - The spring-mvc project (this)
+        
+        - The LINKED projects:
+            
+            - javascriptMVC project (../contacts-jmvc)
+        
+        

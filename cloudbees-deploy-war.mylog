@@ -1,0 +1,8 @@
+ks-MacBook-Pro:contacts-mvc-proj fredrik$ bees app:deploy -a fkarbing/contacts-mvc -m "contacts-mvc" ./contacts-spring-mvc/target/spring-1.0.0-BUILD-SNAPSHOT.war
+Deploying application fkarbing/contacts-mvc (environment: ): ./contacts-spring-mvc/target/spring-1.0.0-BUILD-SNAPSHOT.war
+........................uploaded 25%
+........................uploaded 50%
+........................uploaded 75%
+........................upload completed
+deploying application to server(s)...
+Application fkarbing/contacts-mvc deployed: http://contacts-mvc.fkarbing.cloudbees.net

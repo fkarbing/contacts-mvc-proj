@@ -1,0 +1,7 @@
+[   
+	{"id" : 2, "name" : "Downtown" },
+	{"id" : 2, "name" : "Northside" },
+	{"id" : 3, "name" : "Southside"},
+	{"id" : 4, "name" : "Eastside"},
+	{"id" : 5, "name" : "Westside"}
+]

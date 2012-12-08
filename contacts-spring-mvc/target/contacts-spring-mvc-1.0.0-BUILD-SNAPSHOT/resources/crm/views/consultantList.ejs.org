@@ -1,0 +1,6 @@
+<tr>
+    <td> <%=this.first %> </td>
+    <td> <%=this.company %> </td>
+    <td> <%=this.location %> </td>
+    <td> <%=this.consultantskill %> </td>
+</tr>
